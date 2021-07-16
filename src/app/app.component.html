@@ -1,17 +1,21 @@
-<table>
-  <tr>
-    <th>Company</th>
-    <th>Contact</th>
-    <th>Country</th>
-    <th>Approve</th>
-    <th>Reject</th>
-  </tr>
-  <tr *ngFor = "let x of Data">
-    <td>{{x.Company}}</td>
-    <td>{{x.Contact}}</td>
-    <td>{{x.Country}}</td>
-    <td><input type="radio" name="1" ></td>
-    <td><input type="radio" name="1" ></td>
-  </tr>
-  
-</table>
+<div>
+  <table>
+    <tr>
+      <th>Company</th>
+      <th>Contact</th>
+      <th>Country</th>
+      <th>Approve</th>
+      <th>Reject</th>
+    </tr>
+    <tr *ngFor="let x of Data;let i = 'index+1'">
+      <td>{{x.Company}}</td>
+      <td>{{x.Contact}}</td>
+      <td>{{x.Country}}</td>
+      <td><input type="radio" value="Approve" [checked] = 'approveFlag' name="option-{{i}}" /></td>
+      <td><input type="radio" value="Reject" [checked] = 'rejectFlag' name="option-{{i}}" /></td>
+    </tr>
+  </table>
+
+  <button (click)="approve()">Approve all</button>
+  <button (click)='reject()'>Reject All</button>
+</div>
