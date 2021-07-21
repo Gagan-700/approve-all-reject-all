@@ -20,7 +20,7 @@ export class AppComponent {
   }
 
   approve() {
-    console.log('heyyyy');
+    this.rejectFlag = false;
     if (this.approveFlag === true) {
       this.approveFlag = false;
     } else {
@@ -29,6 +29,7 @@ export class AppComponent {
   }
 
   reject() {
+    this.approveFlag = false;
     if (this.rejectFlag === true) {
       this.rejectFlag = false;
     } else {
