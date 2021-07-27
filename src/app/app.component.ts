@@ -9,14 +9,20 @@ export class AppComponent {
   Data: Array<any>;
   approveFlag: boolean = false;
   rejectFlag: boolean = false;
+  status;
+  textarea;
 
   constructor() {
     this.Data = [
       { Company: 'Google', Contact: 'Raju', Country: 'US' },
-      { Company: 'Google', Contact: 'Raju', Country: 'US' },
-      { Company: 'Google', Contact: 'Raju', Country: 'US' },
-      { Company: 'Google', Contact: 'Raju', Country: 'US' }
+      { Company: 'Apple', Contact: 'Babu bhaiya', Country: 'UK' },
+      { Company: 'Amazon', Contact: 'Shyam', Country: 'IN' }
+      ,
     ];
+  }
+
+  submit(){
+ console.log(this.status,this.textarea)
   }
 
   approve() {
